@@ -1,1 +1,1 @@
-print("Hello world")
+from math import *
