@@ -58,7 +58,7 @@ def choose_player(team):
     return team[which_player-1]
 
 def record_history(challenges,team,nb_of_keys):
-    with open("history.txt", 'a') as f1:
+    with open("output/history.txt", 'a') as f1:
         f1.write(challenges)
         f1.write(team)
         f1.write(nb_of_keys)
