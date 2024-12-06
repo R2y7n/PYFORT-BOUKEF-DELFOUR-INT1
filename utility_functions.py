@@ -3,6 +3,7 @@ def introduction():
     print("The player(s) must complete challenges to earn keys and unlock the treasure room.")
     print("The aim is to collect three keys to access")
 
+anais = "prout"
 
 def compose_equipe(n):
     # List to store team members
