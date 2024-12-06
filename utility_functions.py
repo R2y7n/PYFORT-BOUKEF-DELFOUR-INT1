@@ -25,7 +25,6 @@ def challenges_menu():
 def choose_player(team):
     print()
 
-challenges_menu()
 
 
 
