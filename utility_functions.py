@@ -3,12 +3,12 @@ def introduction():
     print("The player(s) must complete challenges to earn keys and unlock the treasure room.")
     print("The aim is to collect three keys to access")
 
-def compose_equipe(n):
+
+def compose_equip(n):
     # List to store team members
     team = []
 
     # Ask how many players the user wants to include
-
     # Collect player details
     for i in range(n):
         print(f"Player {i + 1}:")
@@ -38,31 +38,33 @@ def compose_equipe(n):
     # Return the team
     return team
 
+
 def challenges_menu():
-    l=["Mathematics challenge","Logic challenge","Chance challenge","Père Fouras'riddle"]
-    for i in range (4):
-        print(i+1, l[i])
-    choice=int(input(("Choose your challenge by entering the number corresponding to your choice:")))
-    while (choice>4 or choice<1):
-        choice=int(input(("Invalid input, enter another number:")))
-    return(l[choice-1])
+    l = ["Mathematics challenge", "Logic challenge", "Chance challenge", "Père Fouras'riddle"]
+    for i in range(4):
+        print(i + 1, l[i])
+    choice = int(input("Choose your challenge by entering the number corresponding to your choice:"))
+    while choice > 4 or choice < 1:
+        choice = int(input(("Invalid input, enter another number:")))
+    return l[choice - 1]
+
 
 def choose_player(team):
     for i in range(len(team)):
-        print(i+1,team[i]["name"],"(",team[i]["profession"],")","-",end=" ")
+        print(i + 1, team[i]["name"], "(", team[i]["profession"], ")", "-", end=" ")
         if team[i]["is_leader"]:
             print("Leader")
         else:
             print("Member")
-    which_player=int(input("Enter the player's number:"))
-    return team[which_player-1]
+    which_player = int(input("Enter the player's number:"))
+    return team[which_player - 1]
 
-def record_history(challenges,team,nb_of_keys):
+
+def record_history(challenges, team, nb_of_keys):
     with open("output/history.txt", 'a') as f1:
         f1.write(challenges)
         f1.write(team)
         f1.write(nb_of_keys)
 
 
-
-
+introduction()
