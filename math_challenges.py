@@ -39,12 +39,6 @@ def nearest_prime(n):
 
 
 def math_roulette_challenge():
-    """
-    Math roulette game where the user calculates the result of a random operation
-    applied to five random numbers and wins if their answer is correct.
-
-    :return: True if the user's answer is correct, False otherwise.
-    """
     # Generate 5 random numbers between 1 and 20
     numbers = [random.randint(1, 20) for _ in range(5)]
 
@@ -87,10 +81,6 @@ def math_roulette_challenge():
 
 
 def math_challenge():
-    """
-    Randomly selects a math challenge and executes it. If the selected challenge requires
-    a parameter, prompts the user to enter it.
-    """
     # Define the available challenges with their argument requirements
     challenges = {
         "factorial": {
