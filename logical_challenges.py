@@ -1,3 +1,4 @@
+#nim game
 def display_sticks(n):
     for i in range(n):
         print("|", end=" ")
@@ -35,5 +36,24 @@ def nim_game():
     else:
         print('You won')
         return True
-
 nim_game()
+
+#tic-tac-toe
+def display_grid(grid):
+    for i in range(len(grid)):
+        for j in range(len(grid[i])):
+            print(grid[i][j], end=" ")
+        print("-"*len(grid[i]))
+
+def check_victory(grid, symbol):
+    for i in range(len(grid)):
+        cpt=0
+        for j in range(len(grid[i])):
+            if grid[i][j]==symbol:
+                cpt+=1
+        if cpt==3:
+            return True
+            break
+
+
+
