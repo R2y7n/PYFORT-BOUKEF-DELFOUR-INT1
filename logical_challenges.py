@@ -1,3 +1,4 @@
+import random
 #nim game
 def display_sticks(n):
     for i in range(n):
@@ -5,14 +6,17 @@ def display_sticks(n):
 
 def player_removal(n):
     remove=int(input("How many sticks do you want to remove? : "))
-    while remove<1 or remove>3:
+    while remove<1 or remove>3 or remove>n:
         print("You cannot remove that many sticks!")
         remove=int(input("How many sticks do you want to remove? : "))
     return remove
 
 def master_removal(n):
-    if
-    return remove
+        remove = (n - 1) % 4
+        if remove == 0:
+            remove = random.randint(1,3)
+        return remove
+
 
 def nim_game():
     n=20
@@ -26,8 +30,9 @@ def nim_game():
             n=n-remove
             turn=True
         elif i%2==1:
-            remove=master_removal(n)
-            n=n-remove
+            remove_master=master_removal(n)
+            n=n-remove_master
+            print("The master remove", remove_master, " sticks")
             turn=False
         i+=1
     if turn:
@@ -45,15 +50,7 @@ def display_grid(grid):
             print(grid[i][j], end=" ")
         print("-"*len(grid[i]))
 
-def check_victory(grid, symbol):
-    for i in range(len(grid)):
-        cpt=0
-        for j in range(len(grid[i])):
-            if grid[i][j]==symbol:
-                cpt+=1
-        if cpt==3:
-            return True
-            break
+
 
 
 
