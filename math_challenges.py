@@ -9,11 +9,12 @@ def factorial(n):
 
 
 def solve_linear_equation():
-    a = random.randint(1, 10)
+    while True:
+        a = random.randint(1, 10)
+        if a != 0:  # Avoid division by zero
+            break
     b = random.randint(1, 10)
-
     x = -b / a
-
     return a, b, x
 
 
