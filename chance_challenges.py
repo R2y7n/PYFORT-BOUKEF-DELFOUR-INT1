@@ -31,6 +31,10 @@ def shell_game():
         print('You lost, the key was under shell', shell)
     return found
 
+def roll_dice():
+    outcome=random.choice([1,2,3,4,5,6])
+    return outcome
+
 
 def roll_dice_game():
     print("Welcome to the Dice Game! Roll a 6 to win the key.")
@@ -42,13 +46,13 @@ def roll_dice_game():
         player_roll = roll_dice()
         print(f"You rolled: {player_roll}")
 
-        if 6 in player_roll:
+        if player_roll==6:
             print("Congratulations! You rolled a 6 and won the key!")
             return True
 
         master_roll = roll_dice()
         print(f"The game master rolled: {master_roll}")
-        if 6 in master_roll:
+        if master_roll==6:
             print("The game master rolled a 6. You lost!")
             return False
 
