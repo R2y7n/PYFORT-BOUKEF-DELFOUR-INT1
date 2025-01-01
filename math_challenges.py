@@ -4,14 +4,14 @@ import random
 def factorial(n):
     fct = 1
     for i in range(1, n + 1):
-        fct = fct * i
+        fct *= i
     return fct
 
 
 def solve_linear_equation():
     while True:
         a = random.randint(1, 10)
-        if a != 0:  # Avoid division by zero
+        if a != 0:  # Ensure 'a' is non-zero to avoid division by zero
             break
     b = random.randint(1, 10)
     x = -b / a
@@ -32,9 +32,7 @@ def is_prime(val):
 
 
 def nearest_prime(n):
-    # Find the first prime number greater than or equal to n.
-
-    while not is_prime(n):  # Keep checking numbers until a prime is found
+    while not is_prime(n):  # Keep incrementing n until a prime is found
         n += 1
     return n
 
@@ -152,4 +150,4 @@ def math_challenge():
         return True
 
 
-print(math_challenge())
+
