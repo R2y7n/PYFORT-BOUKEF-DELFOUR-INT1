@@ -24,7 +24,7 @@ def compose_equip(n):
             'name': name,
             'profession': profession,
             'is_leader': is_leader,
-            'keys_wons': 0  # Initialize the 'keys_wons' field to 0
+            'keys_won': 0  # Initialize the keys_won to 0
         }
 
         # Add the player to the team
@@ -40,7 +40,7 @@ def compose_equip(n):
 
 
 def challenges_menu():
-    l = ["Mathematics challenge", "Logic challenge", "Chance challenge", "Père Fouras'riddle"]
+    l = ["Mathematics challenge", "Chance challenge", "Logic challenge", "Père Fouras'riddle"]
     for i in range(4):
         print(i + 1, l[i])
     choice = int(input("Choose your challenge by entering the number corresponding to your choice:"))
@@ -57,6 +57,8 @@ def chose_player(team):
         else:
             print("Member")
     which_player = int(input("Enter the player's number:"))
+    while which_player < 1 or which_player > len(team):
+        which_player = int(input("Enter the player's number:"))
     return team[which_player - 1]
 
 
@@ -67,4 +69,4 @@ def record_history(challenges, team, nb_of_keys):
         f1.write(nb_of_keys)
 
 
-introduction()
+

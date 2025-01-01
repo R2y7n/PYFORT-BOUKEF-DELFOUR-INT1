@@ -48,4 +48,3 @@ def pere_fouras_riddles():
     print("The correct answer was:" , selected_riddle['answer'])
     return False
 
-pere_fouras_riddles()

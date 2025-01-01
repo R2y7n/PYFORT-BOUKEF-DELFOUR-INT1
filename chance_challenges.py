@@ -47,13 +47,13 @@ def roll_dice_game():
         print(f"You rolled: {player_roll}")
 
         if player_roll==6:
-            print("Congratulations! You rolled a 6 and won the key!")
+            print("You rolled a 6 and won the key!")
             return True
 
         master_roll = roll_dice()
         print(f"The game master rolled: {master_roll}")
         if master_roll==6:
-            print("The game master rolled a 6. You lost!")
+            print("The game master rolled a 6.")
             return False
 
     print("Game over. No one rolled a 6. It's a draw!")
@@ -76,4 +76,3 @@ def chance_challenge():
 
 
 ##### The logical_challenge function
-chance_challenge()
