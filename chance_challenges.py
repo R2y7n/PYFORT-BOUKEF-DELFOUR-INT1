@@ -16,7 +16,7 @@ def shell_game():
         choice = input("Enter your choice: ")
         if 'a' <= choice <= 'z':
             choice = chr(ord(choice) + 32)
-        while choice not in l:
+        while choice not in l or choice<'a' and choice>'c':
             print('Your attempt was unsucessful')
             choice = input("Please enter another choice: ")
             if 'a' <= choice <= 'z':

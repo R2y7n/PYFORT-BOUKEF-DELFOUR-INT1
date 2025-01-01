@@ -50,7 +50,6 @@ def treasure_room():
     program=random.choice(programs)
     for data in tv_game["Fort Boyard"][year][program].keys():
         show[data]=tv_game["Fort Boyard"][year][program][data]
-    print(show)
     for key in show.keys():
         if key=='Clues':
             clues=show[key]

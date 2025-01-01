@@ -49,7 +49,7 @@ def challenges_menu():
     return l[choice - 1]
 
 
-def choose_player(team):
+def chose_player(team):
     for i in range(len(team)):
         print(i + 1, team[i]["name"], "(", team[i]["profession"], ")", "-", end=" ")
         if team[i]["is_leader"]:

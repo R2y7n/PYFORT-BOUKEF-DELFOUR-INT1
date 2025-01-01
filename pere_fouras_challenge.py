@@ -23,19 +23,20 @@ def load_riddles(file):
 
     return riddles
 
-print(load_riddles('data/PFRiddles.json'))
+
 
 
 def pere_fouras_riddles():
     list_riddles = load_riddles('data/PFRiddles.json')
     selected_riddle=random.choice(list_riddles)
     print (selected_riddle['question'])
-    selected_riddle_lower = lowercase(selected_riddle['answer'])
+    riddle_answer_lower = lowercase(selected_riddle['answer'])
+    words_in_answer=riddle_answer_lower.split()
     attempt=3
     while attempt > 0:
         answer=input("Please enter your answer:")
         answer_lower=lowercase(answer)
-        if answer_lower == selected_riddle_lower:
+        if answer_lower == riddle_answer_lower or answer_lower+'s' == riddle_answer_lower or answer_lower in words_in_answer or answer_lower+'s' in words_in_answer:
             print("Your answer is correct !")
             print("You win a key !")
             return True
