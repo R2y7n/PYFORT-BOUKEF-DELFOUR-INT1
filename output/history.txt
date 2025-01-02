@@ -1,0 +1,35 @@
+
+=== Team ===
+Player 1: Anais (Engineer)
+  - Leader: Yes
+  - Keys won: 2
+Player 2: Rayane (Engineer)
+  - Leader: No
+  - Keys won: 1
+
+=== Challenges ===
+Challenge 1:
+  - Type: Mathematics challenge
+  - Player: Anais
+  - Win: Yes
+
+Challenge 2:
+  - Type: Chance challenge
+  - Player: Rayane
+  - Win: Yes
+
+Challenge 3:
+  - Type: Logic challenge
+  - Player: Anais
+  - Win: No
+
+Challenge 4:
+  - Type: Mathematics challenge
+  - Player: Anais
+  - Win: Yes
+
+
+=== Final Result ===
+Number of keys collected: 3
+Game won: Yes
+-------------------------

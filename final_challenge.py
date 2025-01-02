@@ -58,8 +58,10 @@ def treasure_room():
     answer_correct=find_the_word(clues,code_word)
     if answer_correct:
         print("Congratulations, you won!")
+        return True
     else:
         print("Sorry, you lost!")
+        return False
 
 
 

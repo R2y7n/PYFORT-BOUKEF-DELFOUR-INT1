@@ -62,11 +62,22 @@ def chose_player(team):
     return team[which_player - 1]
 
 
-def record_history(challenges, team, nb_of_keys):
+
+def record_history(team, challenges,nb_of_key, game_win):
     with open("output/history.txt", 'a') as f1:
-        f1.write(challenges)
-        f1.write(team)
-        f1.write(nb_of_keys)
-
-
-
+        f1.write("=== Team ===\n")
+        for i in range(len(team)):
+            f1.write(f"Player {i + 1}: {team[i]['name']} ({team[i]['profession']})\n")
+            f1.write(f"  - Leader: {'Yes' if team[i]['is_leader'] else 'No'}\n")
+            f1.write(f"  - Keys won: {team[i]['keys_won']}\n")
+        f1.write("\n=== Challenges ===\n")
+        for i in range(len(challenges)):
+            f1.write(f"Challenge {i + 1}:\n")
+            f1.write(f"  - Type: {challenges[i]['type']}\n")
+            f1.write(f"  - Player: {challenges[i]['player']}\n")
+            f1.write(f"  - Win: {'Yes' if challenges[i]['win'] else 'No'}\n")
+            f1.write("\n")
+        f1.write("\n=== Final Result ===\n")
+        f1.write(f"Number of keys collected: {nb_of_key}\n")
+        f1.write(f"Game won: {'Yes' if game_win else 'No'}\n")
+        f1.write("-------------------------\n")
