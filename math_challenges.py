@@ -2,6 +2,7 @@ import random
 
 
 def factorial(n):
+    """Calculate the factorial of a number."""
     fct = 1
     for i in range(1, n + 1):
         fct *= i
@@ -9,6 +10,7 @@ def factorial(n):
 
 
 def solve_linear_equation():
+    """Generate a random linear equation ax + b = 0 and calculate its solution."""
     while True:
         a = random.randint(1, 10)
         if a != 0:  # Ensure 'a' is non-zero to avoid division by zero
@@ -19,6 +21,7 @@ def solve_linear_equation():
 
 
 def is_prime(val):
+    """Check if a number is prime."""
     if val <= 1:
         return False
     if val == 2:
@@ -32,19 +35,17 @@ def is_prime(val):
 
 
 def nearest_prime(n):
-    while not is_prime(n):  # Keep incrementing n until a prime is found
+    """Find the nearest prime number greater than or equal to n."""
+    while not is_prime(n):
         n += 1
     return n
 
 
 def math_roulette_challenge():
-    # Generate 5 random numbers between 1 and 20
+    """Present a math roulette challenge with random operations."""
     numbers = [random.randint(1, 20) for _ in range(5)]
-
-    # Randomly select an operation
     operation = random.choice(['addition', 'subtraction', 'multiplication'])
 
-    # Calculate the result based on the selected operation
     if operation == "addition":
         res = sum(numbers)
         operation_sign = "+"
@@ -59,95 +60,90 @@ def math_roulette_challenge():
             res *= num
         operation_sign = "*"
 
-    # Format the numbers for display
     numbers_str = f" {operation_sign} ".join(map(str, numbers))
     print(f"Calculate the result of: {numbers_str}")
 
-    # Get the user's answer
     try:
         user_answer = int(input("Your answer: "))
+        if user_answer == res:
+            print("Correct! Well done!")
+            return True
+        else:
+            print(f"Wrong! The correct answer was {res}.")
+            return False
     except ValueError:
         print("Invalid input. Please enter an integer.")
         return False
 
-    # Check the user's answer
-    if user_answer == res:
-        print("Correct! You win!")
-        return True
-    else:
-        print(f"Wrong! The correct answer was {res}. Better luck next time!")
-        return False
-
 
 def math_challenge():
-    # Define the available challenges with their argument requirements
-    challenges = {
-        "factorial": {
-            "function": factorial,
-            "requires_input": True,
-            "prompt": "Enter a positive integer for the factorial calculation: ",
-            "validate": lambda x: x.isdigit() and int(x) >= 0,  # Ensure input is a non-negative integer
-            "input_type": int,
-        },
-        "is_prime": {
-            "function": is_prime,
-            "requires_input": True,
-            "prompt": "Enter a positive integer to determine if it’s a prime number: ",
-            "validate": lambda x: x.isdigit() and int(x) > 0,  # Ensure input is a positive integer
-            "input_type": int,
-        },
-        "nearest_prime": {
-            "function": nearest_prime,
-            "requires_input": True,
-            "prompt": "Enter a positive integer to find the nearest prime: ",
-            "validate": lambda x: x.isdigit() and int(x) > 0,  # Ensure input is a positive integer
-            "input_type": int,
-        },
-        "math_roulette": {
-            "function": math_roulette_challenge,
-            "requires_input": False,
-        },
-        "solve_linear_equation": {
-            "function": solve_linear_equation,
-            "requires_input": False,
-        },
-    }
-
-    # Randomly select a challenge
-    selected_challenge = random.choice(list(challenges.keys()))
-    challenge_details = challenges[selected_challenge]
-
+    """Math challenges where the game asks the question and validates the player's answer."""
+    challenges = ["factorial", "is_prime", "nearest_prime", "math_roulette", "solve_linear_equation"]
+    selected_challenge = random.choice(challenges)
     print(f"Selected challenge: {selected_challenge}")
 
-    # Handle challenges that require user input
-    if challenge_details["requires_input"]:
-        while True:
-            user_input = input(challenge_details["prompt"])
-            if challenge_details["validate"](user_input):
-                user_input = challenge_details["input_type"](user_input)
-                break
+    if selected_challenge == "factorial":
+        number = random.randint(3, 7)
+        correct_answer = factorial(number)
+        print(f"What is the factorial of {number}?")
+        try:
+            user_answer = int(input("Your answer: "))
+            if user_answer == correct_answer:
+                print("Correct! Well done!")
+                return True
             else:
-                print("Invalid input. Please try again.")
+                print(f"Wrong! The correct answer is {correct_answer}.")
+                return False
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+            return False
 
-        # Execute the selected function with the user's input
-        result = challenge_details["function"](user_input)
-        print(f"Result: {result}")
-        return True
-    else:
-        # Execute the selected function without input
-        result = challenge_details["function"]()
-        if selected_challenge == "solve_linear_equation":
-            a, b, x = result
-            print(f"Linear equation: {a}x + {b} = 0")
-            try:
-                sol = float(input("Solve the linear equation: x = "))
-                if sol == x:
-                    print("Correct! The solution is right.")
-                else:
-                    print(f"Wrong! The correct solution is x = {x:.2f}")
-            except ValueError:
-                print(f"Invalid input. The correct solution is x = {x:.2f}")
-        return True
+    elif selected_challenge == "is_prime":
+        number = random.randint(2, 50)
+        correct_answer = is_prime(number)
+        print(f"Is {number} a prime number? (yes or no)")
+        user_answer = input("Your answer: ").strip().lower()
+        if (user_answer == "yes" and correct_answer) or (user_answer == "no" and not correct_answer):
+            print("Correct! Well done!")
+            return True
+        else:
+            correct_text = "yes" if correct_answer else "no"
+            print(f"Wrong! The correct answer is '{correct_text}'.")
+            return False
+
+    elif selected_challenge == "nearest_prime":
+        number = random.randint(10, 30)
+        correct_answer = nearest_prime(number)
+        print(f"What is the nearest prime number greater than or equal to {number}?")
+        try:
+            user_answer = int(input("Your answer: "))
+            if user_answer == correct_answer:
+                print("Correct! Well done!")
+                return True
+            else:
+                print(f"Wrong! The correct answer is {correct_answer}.")
+                return False
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+            return False
+
+    elif selected_challenge == "math_roulette":
+        return math_roulette_challenge()
+
+    elif selected_challenge == "solve_linear_equation":
+        a, b, x = solve_linear_equation()
+        print(f"Solve the linear equation: {a}x + {b} = 0")
+        try:
+            user_answer = float(input("Your answer: x = "))
+            if abs(user_answer - x) < 0.01:  # Allow minor floating-point differences
+                print("Correct! Well done!")
+                return True
+            else:
+                print(f"Wrong! The correct answer is x = {x:.2f}.")
+                return False
+        except ValueError:
+            print(f"Invalid input. The correct answer is x = {x:.2f}.")
+            return False
 
 
-
+# Run the math challenge
