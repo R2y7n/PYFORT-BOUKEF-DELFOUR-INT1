@@ -39,7 +39,7 @@ The game accommodates 1 to 3 players who work as a team to overcome various obst
 
 ### Prerequisites
 
-- Python 3.8 or later
+- Python 3.12 or later
 
 - Required libraries:
 
