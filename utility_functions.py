@@ -14,11 +14,13 @@ def introduction():
 # Role: creates a team of players based on user input
 # Parameters: n is the number of players to add in the team
 # Returns: list of dictionaries
+
+
 def compose_equip(n):
     # Initialization of an empty list to store team members
     team = []
 
-    # Gather informations on each player
+    # Gather information on each player
     for i in range(n):
         print(f"Player {i + 1}:")
         name = input("Enter the player's name: ")
@@ -28,7 +30,7 @@ def compose_equip(n):
         is_leader = input("Is this player the team leader? (yes/no): ").strip().lower()
         is_leader = True if is_leader == 'yes' else False
 
-        # Create a dictionary with the player's informations
+        # Create a dictionary with the player's information
         player = {
             'name': name,
             'profession': profession,
@@ -50,23 +52,38 @@ def compose_equip(n):
 # Role: allow the user to choose one type of challenges
 # Parameters: none
 # Returns: the type of the chosen challenge as a string.
+
+
 def challenges_menu():
-    #List of the different challenges and then displays it
-    l = ["Mathematics challenge", "Chance challenge", "Logic challenge", "Père Fouras'riddle"]
-    for i in range(4):
-        print(i + 1, l[i])
+    """Displays the available challenges and lets the user select one."""
+    # List of the different challenges
+    challenges = ["Mathematics challenge", "Chance challenge", "Logic challenge", "Père Fouras'riddle", "Battle Ship Game"]
 
-    #Ask the user to choose a challenge and validates the input
-    choice = int(input("Choose your challenge by entering the number corresponding to your choice:"))
-    while choice > 4 or choice < 1:
-        choice = int(input(("Invalid input, enter another number:")))
+    # Display challenges with their corresponding numbers
+    print("Available challenges:")
+    for i, challenge in enumerate(challenges, start=1):
+        print(f"{i}. {challenge}")
 
-    #Return the chosen challenge
-    return l[choice - 1]
+    # Ask the user to choose a challenge
+    while True:
+        try:
+            choice = int(input("Choose your challenge by entering the number corresponding to your choice (1-5): "))
+            if 1 <= choice <= len(challenges):
+                break  # Valid input, exit the loop
+            else:
+                print(f"Invalid input. Please enter a number between 1 and {len(challenges)}.")
+        except ValueError:
+            print("Invalid input. Please enter a valid integer.")
+
+    # Return the chosen challenge
+    return challenges[choice - 1]
+
 
 # Role: allows the user to select a player to play the challenge
 # Parameters: a list of dictionaries
 # Returns: A dictionary representing the selected player's information.
+
+
 def choose_player(team):
     #Display the team member, their profession and role
     for i in range(len(team)):
@@ -81,7 +98,7 @@ def choose_player(team):
     while which_player < 1 or which_player > len(team):
         which_player = int(input("Enter the player's number:"))
 
-    #Return the selected player and its informations
+    #Return the selected player and its information
     return team[which_player - 1]
 
 
@@ -92,6 +109,8 @@ def choose_player(team):
 #   - nb_of_key: the number of keys collected during the game
 #   - game_win: a boolean indicating whether the game was won or lost
 # Returns: none, it directly writes the game history into the file "output/history.txt".
+
+
 def record_history(team, challenges,nb_of_key, game_win):
     #Open the file in append mode
     with open("output/history.txt", 'a') as f1:

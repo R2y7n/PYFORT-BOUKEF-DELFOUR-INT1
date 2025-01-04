@@ -102,4 +102,3 @@ def chance_challenge():
         print("You lost the challenge !")
 
     return result
-

@@ -97,9 +97,3 @@ def treasure_room():
     else:
         print("Sorry, you lost!")
         return False
-
-
-
-
-
-

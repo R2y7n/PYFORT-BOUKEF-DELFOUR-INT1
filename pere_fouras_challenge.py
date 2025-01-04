@@ -72,4 +72,3 @@ def pere_fouras_riddles():
     print("You lose the key !")
     print("The correct answer was:" , selected_riddle['answer'])
     return False
-

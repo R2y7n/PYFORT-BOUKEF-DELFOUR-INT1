@@ -13,7 +13,7 @@ def solve_linear_equation():
     """Generate a random linear equation ax + b = 0 and calculate its solution."""
     while True:
         a = random.randint(1, 10)
-        if a != 0:  # Ensure 'a' is non-zero to avoid division by zero
+        if a != 0:  # Ensure 'a' is non-zero avoid division by zero
             break
     b = random.randint(1, 10)
     x = -b / a
@@ -77,7 +77,7 @@ def math_roulette_challenge():
 
 
 def math_challenge():
-    """Math challenges where the game asks the question and validates the player's answer."""
+    """the game asks the questions and validates  player's answer."""
     challenges = ["factorial", "is_prime", "nearest_prime", "math_roulette", "solve_linear_equation"]
     selected_challenge = random.choice(challenges)
     print(f"Selected challenge: {selected_challenge}")
@@ -145,5 +145,3 @@ def math_challenge():
             print(f"Invalid input. The correct answer is x = {x:.2f}.")
             return False
 
-
-# Run the math challenge

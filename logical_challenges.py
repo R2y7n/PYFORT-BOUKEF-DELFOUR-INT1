@@ -195,6 +195,8 @@ def full_grid(grid):
 # Role: checks if the game is over.
 # Parameters: 2D list (grid)
 # Returns: True if there is a winner or the grid is full, False otherwise
+
+
 def check_result(grid):
     if full_grid(grid) or check_victory(grid, "O") or check_victory(grid, "X"):
         return True
@@ -203,6 +205,8 @@ def check_result(grid):
 # Runs the Tic-Tac-Toe game
 # Parameters: none
 # Returns: True if the player wins, False otherwise
+
+
 def tictactoe_game():
     # Display the rules
     print("You are going to face the master at tic-tac-toe")

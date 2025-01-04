@@ -2,17 +2,17 @@ import random
 
 
 def next_player(player):
-    """Switch to the next player."""
+    """Switch to next player."""
     return 1 - player
 
 
 def empty_grid():
-    """Create an empty 3x3 grid."""
+    """Create  empty 3x3 grid."""
     return [[" " for _ in range(3)] for _ in range(3)]
 
 
 def display_grid(grid, msg):
-    """Display the grid with a message."""
+    """Display the grid with message."""
     print(msg)
     for row in grid:
         print("| " + " | ".join(row) + " |")
@@ -20,13 +20,13 @@ def display_grid(grid, msg):
 
 
 def ask_position():
-    """Prompt the user to enter a valid position and return it as a tuple."""
+    """Prompt the user to enter valid position and return as a tuple."""
     while True:
         try:
             pos = input("Enter the position (row,column) between 1 and 3 (e.g., 1,2): ")
             row, col = map(int, pos.split(","))
             if 1 <= row <= 3 and 1 <= col <= 3:
-                return row - 1, col - 1  # Convert to 0-based indexing
+                return row - 1, col - 1  # Convert 0-based index
             else:
                 print("Invalid position. Please enter values between 1 and 3.")
         except ValueError:
@@ -34,7 +34,7 @@ def ask_position():
 
 
 def initialize():
-    """Allow the player to place two boats on a 3x3 grid."""
+    """Allow the player to place two boats on 3x3 grid."""
     grid = empty_grid()
     for i in range(2):
         print(f"Place boat {i + 1}:")
@@ -49,9 +49,9 @@ def initialize():
 
 
 def turn(player, player_shots_grid, opponent_grid):
-    """Handle a single turn for the player or game master."""
+    """Handle a single turn for player or game master."""
     if player == 0:
-        # Player's turn
+        # Player turn
         display_grid(player_shots_grid, "History of your shots:")
         row, col = ask_position()
         if opponent_grid[row][col] == "B":
@@ -81,7 +81,7 @@ def turn(player, player_shots_grid, opponent_grid):
 def has_won(opponent_grid):
     """Check if all boats on the opponent's grid have been sunk."""
     for row in opponent_grid:
-        if "B" in row:  # If there's any boat left, the player hasn't won
+        if "B" in row:  # If any boat left, the player hasn't won
             return False
     return True
 
@@ -93,12 +93,12 @@ def battleship_game():
     print("Each player must place 2 boats on a 3x3 grid.")
     print("Boats are represented by 'B', missed shots by '.', and sunk boats by 'x'.\n")
 
-    # Initialize the player's boat grid
+    # Initialize the player boat grid
     print("Player, place your boats:")
     player_grid = initialize()
     display_grid(player_grid, "Here is your game grid with your boats:")
 
-    # Create and initialize the game master's boat grid
+    # Create and initialize boat grid for the game master
     print("\nThe game master is placing their boats...")
     game_master_grid = empty_grid()
     placed_boats = 0
@@ -112,26 +112,22 @@ def battleship_game():
     player_shots_grid = empty_grid()
     game_master_shots_grid = empty_grid()
 
-    # Game loop
     current_player = 0  # Start with the player (0 = player, 1 = game master)
     while True:
         if current_player == 0:
             # Player's turn
+            display_grid(player_shots_grid, "History of your shots:")
             turn(0, player_shots_grid, game_master_grid)
             if has_won(game_master_grid):  # Check if player has won
                 print("Congratulations! You sank all the game master's boats. You win!")
                 return True
         else:
             # Game master's turn
+            print("It's the game master's turn!")
             turn(1, game_master_shots_grid, player_grid)
             if has_won(player_grid):  # Check if game master has won
                 print("The game master has sunk all your boats. You lose!")
                 return False
 
-        # Switch to the next player
+        # Switch next player
         current_player = next_player(current_player)
-
-
-# Start the game
-if __name__ == "__main__":
-    battleship_game()
