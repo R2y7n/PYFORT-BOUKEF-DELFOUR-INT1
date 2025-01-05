@@ -154,4 +154,3 @@ def math_challenge():
                 print(f"Invalid input. Please enter your answer")
 
 
-math_challenge()
