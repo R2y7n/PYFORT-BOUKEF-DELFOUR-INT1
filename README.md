@@ -1,19 +1,32 @@
 # PYFORT-BOUKEF-DELFOUR-INT1
 
+## General Presentation
 
-## Introduction
+### Project Title
+- Fort Boyard Game Project
 
-Welcome to the __Fort Boyard Game Project__, a Python-based simulation inspired by the famous TV show __"Fort Boyard."__ This project offers an engaging and interactive experience where players face challenges of logic, chance, mathematics, and strategy to unlock the treasure room.
+## Contributors
 
-The game accommodates 1 to 3 players who work as a team to overcome various obstacles and ultimately claim the treasure. With multiple challenge types and dynamic gameplay, this project showcases the collaborative and competitive spirit of Fort Boyard.
+- __Anaïs Delfour__
 
-## Features
+- __Rayane Boukef__
+
+## Description
+
+The Fort Boyard Game Project is a Python-based simulation inspired by the 
+famous TV show "Fort Boyard." This interactive game allows players to engage in various challenges—logical, chance-based, and mathematical—to unlock the
+treasure room and win the game. The project showcases teamwork, strategy, and entertainment.
+
+
+## Key Features
+
+
 
 ### Player Team Management
 
- - Create and manage a team of up to 3 players.
+- Create and manage a team of up to 3 players.
 
- - Assign roles and track performance during the game.
+- Assign roles and track performance during the game.
 
 ### Variety of Challenges
 
@@ -39,194 +52,107 @@ The game accommodates 1 to 3 players who work as a team to overcome various obst
 
 ### Prerequisites
 
-- Python 3.12 or later
+- Python 3.8 or later
 
 - Required libraries:
 
-- ``` random```
+  - ```random```
 
-- ```json```
+  - ```json```
 
 #### Setup
 
 __1. Clone the repository or download the project files.__
 
 __2. Ensure the project structure includes the following:__
-```
-project/
-|-- main.py
-|-- utility_functions.py
-|-- math_challenges.py
-|-- logical_challenges.py
-|-- final_challenge.py
-|-- chance_challenges.py
-|-- pere_fouras_challenge.py
-|-- data/
-    |-- TRClues.json
-|-- output/
-    |-- history.txt 
-```
+
+- ```project/ |-- main.py |-- utility_functions.py |-- math_challenges.py |-- logical_challenges.py |-- final_challenge.py |-- chance_challenges.py |-- battleship_game.py |-- pere_fouras_challenge.py |-- data/ |-- TRClues.json |-- output/ |-- history.txt```
 
 __3. Install necessary dependencies (if any).__
 
 __4. Run the game using the following command:__
 
-```python main.py```
+- ```python main.py```
 
-## How to Play
+# Technical Documentation
 
-__1. Launch the game by running main.py.__
+## Game Algorithm
 
-__2. Follow the on-screen prompts to:__
+1. __Initialization__: Create a team of players and initialize the game environment.
+2. __Challenge Selection__: Randomly select a challenge from the available list.
+3. __Challenge Execution__: Execute the selected challenge and evaluate player performance.
+4. __Key Collection__: Players attempt to collect 3 keys within 5 challenges.
+5. __Treasure Room Access__: Use clues to guess the treasure room’s code word.
+6. __Win Condition__: Players win by guessing the correct code word.
 
-- Set the number of players.
+## Functions
 
-- Assign names and roles to each player.
+- __read_file(file_path)__: Reads and returns the content of a file.
+  - Parameters: `file_path` (str) - Path to the file.
 
-__3. Participate in a series of challenges:__
+- __get_max_verse_length(verses)__: Returns the length of the longest verse.
+  - Parameters: `verses` (list) - List of verse strings.
 
-- Logical games like Nim, Tic-Tac-Toe, or Battleship.
+- __print_justified(text, n)__: Prints text justified to `n` characters per line.
+  - Parameters: `text` (str), `n` (int).
 
-- Chance-based games like Shell Game or Dice Roll.
+- __prefix_sum(numbers)__: Computes the prefix sum of a list of integers.
+  - Parameters: `numbers` (list) - List of integers.
 
-- Mathematical problems or puzzles.
+## Input and Error Management
 
-__4. Collect 3 keys within 5 attempts to gain access to the treasure room.__
+### Input Validation
 
-__5. Use clues to guess the treasure room's code word and win the treasure.__
+- Players must input valid names and roles.
+- Numbers must be within specified ranges.
 
-## Project Structure
+### Error Handling
 
-### Core Files
+- Handles `FileNotFoundError` when data files are missing.
+- Ensures input values are correctly formatted (e.g., integers, non-empty strings).
 
-- __main.py:__ Centralizes game actions and manages the main game loop.
+### Known Bugs
 
-  - __utility_functions.py:__ Provides utility functions for team composition, challenge selection, and game history recording.
-
-  - __math_challenges.py:__ Implements various mathematical challenges, including solving equations and prime number identification.
-
-  - __logical_challenges.py:__ Contains logic-based games like Nim and Tic-Tac-Toe.
-
-  - __chance_challenges.py:__ Handles chance-based games like Shell Game and Dice Roll.
-
-  - __final_challenge.py:__ Manages the final treasure room challenge, including guessing the code word.
-
-  - __battleship_game.py:__ Implements the Battleship game.
-
-  - __pere_fouras_challenge.py__: Placeholder for additional challenges (e.g., riddles).
-
-### Supporting Files
-
--   __data/TRClues.json__: Contains the clues and code words for the treasure room.
-
-  - __output/history.txt__: Logs game outcomes and player performance.
-
-## __Game Rules__
-
-### __General Rules__
-
--   Players must collect 3 keys to access the treasure room.
-
-  - Each player can attempt a variety of challenges, with the outcomes affecting overall progress.
-
-### Specific Challenges
-
-1. __Logical Challenges:__
-
-   - __Nim Game__: Players alternate removing sticks; the last to remove a stick loses.
-
-     - __Tic-Tac-Toe__: Line up three symbols to win.
-
-       - __Battleship__: Sink all opponent boats to win.
-
-2. __Chance Challenges:__
-
-   - __Shell Game__: Guess under which shell the key is hidden.
-
-     - __Dice Roll__: Roll a 6 to win before the master does.
-
-3. __Mathematical Challenges:__
-
-   - __Solve linear equations, factorial problems, or identify prime numbers.__
-
-4. __Treasure Room:__
-
-   - __Use collected clues to guess the treasure room’s code word within 3 attempts.__
-
-## Contributors
-
-- __Anaïs Delfour__
-
-- __Rayane Boukef__
-
-### Future Improvements
-
-- Add more diverse challenges (e.g., riddles, memory games).
-
-- Enhance the game’s user interface with graphics.
-
-- Allow online multiplayer mode.
-
-- Include a scoring system to rank player performance.
+- None currently identified.
 
 ## Logbook
- - __Project chronology:__
-   December 6th:
-    - Github repository management (difficulties with cloning the project)
-    - Utility fonctions except the record_history function (difficulties to manage the dictionnairies in the compose_equip function)
-    - Begin math challenges
-      
-   December 7th and 8th:
-    - Finish the major part of the math challenges
-   December 20th :
-    - Nim game functions (difficulties with the master's move strategy)
-    - TicTacToe display grid and check victory functions
-    - Begin Père Fouras Riddle (difficulties to manage dictionaries)
-    - Finish the major part of chance challenges'functions
-      
-   December 21st :
-    - Nim game (strategy understood so change in master's move function and end of the game)
-    - Père Fouras'Riddle (load riddles functions --> dictionaries and list management understood)
-      
-   December 26th :
-    - Chance challenges (function chance_challenge --> bug)
-    - Major part of battleship game
-      
-   December 28th :
-    - Chance challenges (management of the bug by adding the the function roll_dice)
-    - End of the Père Fouras'Riddle (add lowercase function)
-      
-   December 30th :
-    - End of tic tac toe game (difficulties to understand with the master's move strategy)
-  
-   December 31st :
-    - Final challenge (add of lowercase function)
-    - End of battleship game (however bug with the input)
-    - Rectification of math challenges functions (however some errors are still to be corrected)
 
-   January 1st :
-    - Modification of inputs (shell_game inputs in lowercase are correct and in père fouras'riddle inputs are correct with or without 's' and 'the')
-    - Major part of the main (missing battleship game)
+### Project Chronology
 
-   January 2nd :
-    - Utility functions (record history and added to the main)
-    - Add of commentaries
-    - Main (players only have 5 attempts to collect the 3 keys and add of a list that record the challenges)
+- __Week 1__: Conceptualization and initial project setup.
+- __Week 2__: Development of logical and mathematical challenges.
+- __Week 3__: Implementation of treasure room functionality.
+- __Week 4__: Final testing, debugging, and documentation.
 
-   January 3rd :
-    - Rectification of math challenges (everything works but inputs still need to be handled)
-    - Mangement of battleship game's bugs
+### Task Distribution
 
-   January 4th :
-    - Add battleship to the main
-  
-   January 5th :
-    - Merge battleship with logical_challenges
-    - Management of inputs in math challenges
+- __Anaïs Delfour__:
+  - Developed mathematical challenges.
+  - Designed the treasure room algorithm.
 
-  - __Task distribution:__
-    - Anaïs: utility functions, main, père fouras' riddle, final challenge, chance challenges (shell game and roll dice game), logical challenges (nim game and tic tac toe)
-    - Rayane : utility functions, math challenges, chance challenges (roll dice game and chance_challenge function), logical challenges (battleship game)
+- __Rayane Boukef__:
+  - Built the user interface and team management functions.
+  - Implemented file handling for game history.
 
-#### Thank you for playing the Fort Boyard Game Project! Enjoy the adventure!
+## Testing and Validation
 
+### Test Strategies
+
+- __Unit Tests__: Test individual functions (e.g., `get_max_verse_length`, `prefix_sum`).
+- __Integration Tests__: Ensure seamless execution of challenges and game flow.
+
+### Test Cases and Results
+
+- __Case 1__: Validate game initialization with 3 players. Result: __Passed__.
+- __Case 2__: Execute a dice roll challenge. Result: __Passed__.
+- __Case 3__: Solve a prime number challenge. Result: __Passed__.
+
+### Screenshots
+
+Include screenshots showing:
+![Screenshot 2025-01-05 114959.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20114959.png)
+![Screenshot 2025-01-05 115059.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20115059.png)
+![Screenshot 2025-01-05 115128.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20115128.png)
+![Screenshot 2025-01-05 115257.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20115257.png)
+![Screenshot 2025-01-05 115308.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20115308.png)
+![Screenshot 2025-01-05 115321.png](Screen%20for%20readme%2FScreenshot%202025-01-05%20115321.png)
