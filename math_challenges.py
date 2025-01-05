@@ -63,17 +63,18 @@ def math_roulette_challenge():
     numbers_str = f" {operation_sign} ".join(map(str, numbers))
     print(f"Calculate the result of: {numbers_str}")
 
-    try:
-        user_answer = int(input("Your answer: "))
-        if user_answer == res:
-            print("Correct! Well done!")
-            return True
-        else:
-            print(f"Wrong! The correct answer was {res}.")
-            return False
-    except ValueError:
-        print("Invalid input. Please enter an integer.")
-        return False
+    while True:
+        try:
+            user_answer = int(input("Your answer: "))
+            if user_answer == res:
+                print("Correct! Well done!")
+                return True
+            else:
+                print(f"Wrong! The correct answer was {res}.")
+                return False
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
+
 
 
 def math_challenge():
@@ -86,46 +87,52 @@ def math_challenge():
         number = random.randint(3, 7)
         correct_answer = factorial(number)
         print(f"What is the factorial of {number}?")
-        try:
-            user_answer = int(input("Your answer: "))
-            if user_answer == correct_answer:
-                print("Correct! Well done!")
-                return True
-            else:
-                print(f"Wrong! The correct answer is {correct_answer}.")
-                return False
-        except ValueError:
-            print("Invalid input. Please enter an integer.")
-            return False
+        while True:
+            try:
+                user_answer = int(input("Your answer: "))
+                if user_answer == correct_answer:
+                    print("Correct! Well done!")
+                    return True
+                else:
+                    print(f"Wrong! The correct answer is {correct_answer}.")
+                    return False
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
 
     elif selected_challenge == "is_prime":
         number = random.randint(2, 50)
         correct_answer = is_prime(number)
         print(f"Is {number} a prime number? (yes or no)")
-        user_answer = input("Your answer: ").strip().lower()
-        if (user_answer == "yes" and correct_answer) or (user_answer == "no" and not correct_answer):
-            print("Correct! Well done!")
-            return True
-        else:
-            correct_text = "yes" if correct_answer else "no"
-            print(f"Wrong! The correct answer is '{correct_text}'.")
-            return False
+        while True:
+            user_answer = input("Your answer ('yes' or 'no') : ").strip().lower()
+            if user_answer in {"yes", "no"}:
+                if (user_answer == "yes" and correct_answer) or (user_answer == "no" and not correct_answer):
+                    print("Correct! Well done!")
+                    return True
+                else:
+                    correct_text = "yes" if correct_answer else "no"
+                    print(f"Wrong! The correct answer is '{correct_text}'.")
+                    return False
+            else:
+                print("Invalid input. Please answer with 'yes' or 'no'.")
 
     elif selected_challenge == "nearest_prime":
         number = random.randint(10, 30)
         correct_answer = nearest_prime(number)
         print(f"What is the nearest prime number greater than or equal to {number}?")
-        try:
-            user_answer = int(input("Your answer: "))
-            if user_answer == correct_answer:
-                print("Correct! Well done!")
-                return True
-            else:
-                print(f"Wrong! The correct answer is {correct_answer}.")
-                return False
-        except ValueError:
-            print("Invalid input. Please enter an integer.")
-            return False
+        while True:
+            try:
+                user_answer = int(input("Your answer: "))
+                if user_answer == correct_answer:
+                    print("Correct! Well done!")
+                    return True
+                else:
+                    print(f"Wrong! The correct answer is {correct_answer}.")
+                    return False
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+
 
     elif selected_challenge == "math_roulette":
         return math_roulette_challenge()
@@ -133,15 +140,18 @@ def math_challenge():
     elif selected_challenge == "solve_linear_equation":
         a, b, x = solve_linear_equation()
         print(f"Solve the linear equation: {a}x + {b} = 0")
-        try:
-            user_answer = float(input("Your answer: x = "))
-            if abs(user_answer - x) < 0.01:  # Allow minor floating-point differences
-                print("Correct! Well done!")
-                return True
-            else:
-                print(f"Wrong! The correct answer is x = {x:.2f}.")
-                return False
-        except ValueError:
-            print(f"Invalid input. The correct answer is x = {x:.2f}.")
-            return False
+        while True:
+            try:
+                user_answer = float(input("Your answer (example of answer's format: -1.23): x = "))
+                if abs(user_answer - x) < 0.01:  # Allow minor floating-point differences
+                    print("Correct! Well done!")
+                    return True
+                else:
+                    print(f"Wrong! The correct answer is x = {x:.2f}.")
+                    print(f"The correct answer is x = {x:.2f}.")
+                    return False
+            except ValueError:
+                print(f"Invalid input. Please enter your answer")
 
+
+math_challenge()
