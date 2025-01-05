@@ -211,7 +211,7 @@ __5. Use clues to guess the treasure room's code word and win the treasure.__
    January 2nd :
     - Utility functions (record history and added to the main)
     - Add of commentaries
-    - Main (players only have 5 attempts to collect the 3 keys
+    - Main (players only have 5 attempts to collect the 3 keys and add of a list that record the challenges)
 
    January 3rd :
     - Rectification of math challenges (everything works but inputs still need to be handled)
