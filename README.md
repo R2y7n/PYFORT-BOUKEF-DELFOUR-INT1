@@ -225,8 +225,8 @@ __5. Use clues to guess the treasure room's code word and win the treasure.__
     - Management of inputs in math challenges
 
   - __Task distribution:__
-    Anaïs: utility functions, main, père fouras' riddle, final challenge, chance challenges (shell game and roll dice game), logical challenges (nim game and tic tac toe)
-    Rayane : utility functions, math challenges, chance challenges (roll dice game and chance_challenge function), logical challenges (battleship game)
+    - Anaïs: utility functions, main, père fouras' riddle, final challenge, chance challenges (shell game and roll dice game), logical challenges (nim game and tic tac toe)
+    - Rayane : utility functions, math challenges, chance challenges (roll dice game and chance_challenge function), logical challenges (battleship game)
 
 #### Thank you for playing the Fort Boyard Game Project! Enjoy the adventure!
 
