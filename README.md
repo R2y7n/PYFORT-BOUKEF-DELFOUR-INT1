@@ -127,11 +127,13 @@ __4. Run the game using the following command:__
 ### Task Distribution
 
 - __Anaïs Delfour__:
-  - Developed mathematical challenges.
-  - Designed the treasure room algorithm.
+  - Developed chance and logical (nim and tictactoe) challenges.
+  - Developed main and utility functions
+  - Designed père fouras and the treasure room algorithm.
 
 - __Rayane Boukef__:
-  - Built the user interface and team management functions.
+  - Developed math and battleship functions.
+  - Developed main
   - Implemented file handling for game history.
 
 ## Testing and Validation
