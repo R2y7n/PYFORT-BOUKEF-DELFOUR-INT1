@@ -60,7 +60,6 @@ project/
 |-- logical_challenges.py
 |-- final_challenge.py
 |-- chance_challenges.py
-|-- battleship_game.py
 |-- pere_fouras_challenge.py
 |-- data/
     |-- TRClues.json
@@ -169,6 +168,65 @@ __5. Use clues to guess the treasure room's code word and win the treasure.__
 - Allow online multiplayer mode.
 
 - Include a scoring system to rank player performance.
+
+## Logbook
+ - __Project chronology:__
+   December 6th:
+    - Github repository management (difficulties with cloning the project)
+    - Utility fonctions except the record_history function (difficulties to manage the dictionnairies in the compose_equip function)
+    - Begin math challenges
+      
+   December 7th and 8th:
+    - Finish the major part of the math challenges
+   December 20th :
+    - Nim game functions (difficulties with the master's move strategy)
+    - TicTacToe display grid and check victory functions
+    - Begin Père Fouras Riddle (difficulties to manage dictionaries)
+    - Finish the major part of chance challenges'functions
+      
+   December 21st :
+    - Nim game (strategy understood so change in master's move function and end of the game)
+    - Père Fouras'Riddle (load riddles functions --> dictionaries and list management understood)
+      
+   December 26th :
+    - Chance challenges (function chance_challenge --> bug)
+    - Major part of battleship game
+      
+   December 28th :
+    - Chance challenges (management of the bug by adding the the function roll_dice)
+    - End of the Père Fouras'Riddle (add lowercase function)
+      
+   December 30th :
+    - End of tic tac toe game (difficulties to understand with the master's move strategy)
+  
+   December 31st :
+    - Final challenge (add of lowercase function)
+    - End of battleship game (however bug with the input)
+    - Rectification of math challenges functions (however some errors are still to be corrected)
+
+   January 1st :
+    - Modification of inputs (shell_game inputs in lowercase are correct and in père fouras'riddle inputs are correct with or without 's' and 'the')
+    - Major part of the main (missing battleship game)
+
+   January 2nd :
+    - Utility functions (record history and added to the main)
+    - Add of commentaries
+    - Main (players only have 5 attempts to collect the 3 keys
+
+   January 3rd :
+    - Rectification of math challenges (everything works but inputs still need to be handled)
+    - Mangement of battleship game's bugs
+
+   January 4th :
+    - Add battleship to the main
+  
+   January 5th :
+    - Merge battleship with logical_challenges
+    - Management of inputs in math challenges
+
+  - __Task distribution:__
+    Anaïs: utility functions, main, père fouras' riddle, final challenge, chance challenges (shell game and roll dice game), logical challenges (nim game and tic tac toe)
+    Rayane : utility functions, math challenges, chance challenges (roll dice game and chance_challenge function), logical challenges (battleship game)
 
 #### Thank you for playing the Fort Boyard Game Project! Enjoy the adventure!
 
