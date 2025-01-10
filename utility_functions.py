@@ -10,7 +10,7 @@ import random
 def introduction():
     print("Welcome to Fort Boyard!")
     print("The player(s) must complete challenges to earn keys and unlock the treasure room.")
-    print("The aim is to collect three keys to access")
+    print("The aim is to collect three keys to access to the treasure room.")
 
 # Role: creates a team of players based on user input
 # Parameters: n is the number of players to add in the team

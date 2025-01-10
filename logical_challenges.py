@@ -164,6 +164,8 @@ def master_turn(grid):
 # Role: executes the player's turn
 # Parameters: 2D list (grid)
 # Returns: the grid updated with the player's move
+
+"""
 def player_turn(grid):
     #List of empty cells in which the player can put a symbol
     empty_cells = [(row, col) for row in range(3) for col in range(3) if grid[row][col] == " "]
@@ -181,6 +183,32 @@ def player_turn(grid):
     # Place the symbol
     grid[row_coordinate-1][column_coordinate-1] = "X"
     return grid
+
+"""
+def player_turn(grid):
+    #Handle the player's turn.
+    #List of empty cells in which the player can put a symbol
+    empty_cells = [(row, col) for row in range(3) for col in range(3) if grid[row][col] == " "]
+
+    while True:
+        # Ask the player where he wants to make a move then validates the coordinates
+        try:
+            pos = input("In which row and column do you want to place your symbol (e.g., 1,2)? : ")
+            row_coordinate, column_coordinate = map(int, pos.split(","))
+            coordinates = (row_coordinate - 1, column_coordinate - 1)  # Convertir en index basé sur 0
+
+            if coordinates in empty_cells:
+                # Place the symbol
+                grid[row_coordinate - 1][column_coordinate - 1] = "X"
+                return grid
+            else:
+                print("You cannot place your symbol in this cell! Choose another one!")
+        except ValueError:
+            print("Invalid format. Please enter the position as row,column (e.g., 1,2).")
+
+
+
+
 
 # Role: checks if the grid is full
 # Parameters: 2D list (grid)
@@ -260,7 +288,7 @@ def ask_position():
             pos = input("Enter the position (row,column) between 1 and 3 (e.g., 1,2): ")
             row, col = map(int, pos.split(","))
             if 1 <= row <= 3 and 1 <= col <= 3:
-                return row - 1, col - 1  # Convert 0-based index
+                return row - 1, col - 1
             else:
                 print("Invalid position. Please enter values between 1 and 3.")
         except ValueError:
