@@ -108,7 +108,7 @@ def game():
     # Record the game in the history file
     record_history(team, challenges, keys_cpt, win_the_game)
 
-
+#p
 
 # Main entry point of the program
 if __name__ == "__main__":
