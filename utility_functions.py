@@ -58,7 +58,7 @@ def compose_equip(n):
 def challenges_menu():
     """Displays the available challenges and lets the user select one."""
     # List of the different challenges
-    challenges = ["Mathematics challenge", "Chance challenge", "Logic challenge", "Père Fouras'riddle"]
+    challenges = ["Mathematics challenge", "Chance challenge", "Logic challenge", "Père Fouras' riddle"]
 
     # Display challenges with their corresponding numbers
     print("Available challenges:")
