@@ -43,7 +43,7 @@ def game():
             win = math_challenge()
         elif choice_of_challenge == "Chance challenge":
             win = chance_challenge()
-        elif choice_of_challenge == "Logic c1,3hallenge":
+        elif choice_of_challenge == "Logic challenge":
             game_selected = random.choice(["The game of Nim", "Tic-Tac-Toe", "Battleship"])
             print(f"You are going to play a duel against the master of time at {game_selected}")
             if game_selected == "The game of Nim":
