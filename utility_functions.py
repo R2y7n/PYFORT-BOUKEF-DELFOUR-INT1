@@ -68,7 +68,7 @@ def challenges_menu():
     # Ask the user to choose a challenge
     while True:
         try:
-            choice = int(input("Choose your challenge by entering the number corresponding to your choice (1-5): "))
+            choice = int(input("Choose your challenge by entering the number corresponding to your choice (1-4): "))
             if 1 <= choice <= len(challenges):
                 break  # Valid input, exit the loop
             else:
